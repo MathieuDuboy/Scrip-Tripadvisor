@@ -1,0 +1,76 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:8889
+-- Généré le :  mer. 14 août 2019 à 08:33
+-- Version du serveur :  5.6.35
+-- Version de PHP :  5.6.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `trip_scrap`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `informations_restaurants`
+--
+
+CREATE TABLE `informations_restaurants` (
+  `id` int(12) NOT NULL,
+  `addresse` varchar(255) NOT NULL,
+  `ville` varchar(255) NOT NULL,
+  `pays` varchar(255) NOT NULL,
+  `note` varchar(10) NOT NULL,
+  `tel` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `nom_restaurant` varchar(255) NOT NULL,
+  `cuisine` varchar(500) NOT NULL,
+  `images` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liens_restaurants`
+--
+
+CREATE TABLE `liens_restaurants` (
+  `id` int(12) NOT NULL,
+  `url` varchar(1500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `informations_restaurants`
+--
+ALTER TABLE `informations_restaurants`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `liens_restaurants`
+--
+ALTER TABLE `liens_restaurants`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `informations_restaurants`
+--
+ALTER TABLE `informations_restaurants`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `liens_restaurants`
+--
+ALTER TABLE `liens_restaurants`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
