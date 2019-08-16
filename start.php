@@ -30,7 +30,7 @@ error_reporting(E_ALL);*/
       $id_actuel = $row["auto_increment"];
       echo $id_actuel;
     }else {
-      $tab_url = split("-", $url_ville_restaurant);
+      $tab_url = explode("-", $url_ville_restaurant);
       $oa = 30*$nb;
       $new_url = $tab_url[0].'-'.$tab_url[1].'-oa'.$oa.'-'.$tab_url[2];
       echo $new_url;
@@ -55,7 +55,7 @@ error_reporting(E_ALL);*/
 
     // stockage des données
     foreach($tab_urls_resto as $vrai_url) {
-      $sql    = "INSERT INTO `liens_restaurants` (`id`, `url`) VALUES ('', '".$vrai_url."');";
+      $sql    = "INSERT INTO `liens_restaurants` (`id`, `url`) VALUES (NULL, '".$vrai_url."');";
       $result = mysqli_query($db, $sql);
     }
 
